@@ -36,9 +36,10 @@ function drawXO(id) {
         document.getElementById(id).innerText = 'X';
         document.getElementById(id).style.color = "blue";
         table[i][j] = 'X';
+        console.log(table)
     } else {
         document.getElementById(id).innerText = 'O';
-        document.getElementById(id).style.color = "green";
+        document.getElementById(id).style.color = "red";
         table[i][j] = 'O';
     }
     checkWin();
