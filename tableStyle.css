@@ -1,0 +1,9 @@
+*{
+    margin: auto;
+}
+td, tr {
+    width: 20px;
+    color: blue;
+    background-color: rgba(112, 169, 77, 0.29);
+    height: 20px;
+}
