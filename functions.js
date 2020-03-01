@@ -5,19 +5,22 @@ let tempOX = 0;
 let col = prompt("Nhap vao so cot : ");
 let row = prompt("Nhap vao so hang : ");
 let table = Create2DArray(row);
-for (i = 0; i < row; i++) {
-    for (j = 0; j < col; j++) {
-        table[i][j] = i + "." + j;
-    }
-}
 
-for (i = 0; i < row; i++) {
-    for (j = 0; j < col; j++) {
-        display += "<td id=" + i + "." + j + " onclick='drawXO(this.id)'>" + ' ' + "</td>";
+function init() {
+    for (i = 0; i < row; i++) {
+        for (j = 0; j < col; j++) {
+            table[i][j] = i + "." + j;
+        }
     }
-    display += "</tr>";
+
+    for (i = 0; i < row; i++) {
+        for (j = 0; j < col; j++) {
+            display += "<td id=" + i + "." + j + " onclick='drawXO(this.id)'>" + ' ' + "</td>";
+        }
+        display += "</tr>";
+    }
+    document.getElementById('ticTacToe').innerHTML = display;
 }
-document.getElementById('ticTacToe').innerHTML = display;
 
 function Create2DArray(rows) {
     let arr = [];
@@ -28,10 +31,15 @@ function Create2DArray(rows) {
 }
 
 function drawXO(id) {
+    if(checkWin())return;
     let temp = document.getElementById(id).id;
     temp = temp.split(".");
     i = temp[0];
     j = temp[1];
+    if (table[i][j] === 'X' || table[i][j] === 'O') {
+        alert('Cell is not empty');
+        return;
+    }
     if (tempOX === 0) {
         document.getElementById(id).innerText = 'X';
         document.getElementById(id).style.color = "blue";
@@ -48,7 +56,12 @@ function drawXO(id) {
 }
 
 function checkWin() {
-    if (checkRow() || checkCol() || checkRightObl() || checkLeftObl()) alert("Game Over");
+    if (checkRow() || checkCol() || checkRightObl() || checkLeftObl()) {
+        setTimeout(function () {
+            alert("Game Over");
+        }, 100);
+        return true;
+    }
 }
 
 function checkRow() {
@@ -130,4 +143,14 @@ function checkLeftObl() {
             if (count < 4) count = 0;
         }
     }
+}
+
+function restart() {
+    display = "<table border='1px' cellpadding='2px' " +
+        "style='text-align: center;border-collapse: collapse;table-layout: fixed'><tr>";
+    tempOX = 0;
+    col = prompt("Nhap vao so cot : ");
+    row = prompt("Nhap vao so hang : ");
+    table = Create2DArray(row);
+    init();
 }

@@ -6,8 +6,11 @@
     <link rel="stylesheet" href="tableStyle.css">
 
 </head>
-<body style="margin-left: 150px">
-<div id="ticTacToe"></div>
+<body style="margin-left: 150px" onload="init()">
+<span><input type="button" id="startGame" width="300px"height="300px" style="text-align: center; margin-left:100px;
+margin-top: 5px" value="Start" onclick="restart()"></span>
+
+<span  id="ticTacToe"></span>
 
 <script src="functions.js"></script>
 </body>
