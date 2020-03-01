@@ -1,10 +1,8 @@
-*{
-    margin :auto;
 
-}
 td, tr {
-    width: 20px;
+    width: 30px;
     color: blue;
     background-color: rgba(112, 169, 77, 0.29);
-    height: 20px;
+    height: 30px;
+    font-size: 20px;
 }

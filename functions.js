@@ -65,7 +65,6 @@ function checkWin() {
 }
 
 function checkRow() {
-    let result = false;
     let count = 0;
     let k = 1;
     for (let i = 0; i < row; i++) {
@@ -76,8 +75,8 @@ function checkRow() {
                 }
             }
             if (count === 4) {
-                result = true;
-                return result;
+
+                return true;
             }
             if (count < 4) count = 0;
         }
@@ -86,7 +85,6 @@ function checkRow() {
 
 
 function checkCol() {
-    let result = false;
     let count = 0;
     let k = 1;
     for (let j = 0; j < col; j++) {
@@ -97,8 +95,7 @@ function checkCol() {
                 }
             }
             if (count === 4) {
-                result = true;
-                return result;
+                return true;
             }
             if (count < 4) count = 0;
         }
@@ -106,7 +103,6 @@ function checkCol() {
 }
 
 function checkRightObl() {
-    let result = false;
     let count = 0;
     let k = 1;
     for (let i = 0; i < row - 4; i++) {
@@ -117,8 +113,7 @@ function checkRightObl() {
                 }
             }
             if (count === 4) {
-                result = true;
-                return result;
+                return true;
             }
             if (count < 4) count = 0;
         }
@@ -126,7 +121,6 @@ function checkRightObl() {
 }
 
 function checkLeftObl() {
-    let result = false;
     let count = 0;
     let k = 1;
     for (let i = 0; i < row - 4; i++) {
@@ -137,8 +131,7 @@ function checkLeftObl() {
                 }
             }
             if (count === 4) {
-                result = true;
-                return result;
+                return true;
             }
             if (count < 4) count = 0;
         }
