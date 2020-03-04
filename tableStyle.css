@@ -1,8 +1,17 @@
-
+table{
+    width: auto;
+}
 td, tr {
     width: 30px;
+    height: 30px;
     color: blue;
     background-color: rgba(112, 169, 77, 0.29);
-    height: 30px;
     font-size: 20px;
+    color: rgba(243, 191, 8, 0.98);
+}
+.empty{
+    color: white;
+    font-size: 20px;
+    background-color: #fefdff;
+    border-style: hidden;
 }
