@@ -77,6 +77,9 @@ function checkRow() {
             if (count >= 4) {
                 for (k = 0; k <= count; k++) {
                     document.getElementById(i + '.' + (j + k)).style.color = "yellow";
+                    checkCol();
+                    checkLeftObl();
+                    checkRightObl();
                 }
                 return true;
             }
@@ -95,13 +98,15 @@ function checkCol() {
     for (let j = 0; j < col; j++) {
         for (let i = 0; i < row-4; i++) {
             while (table[i][j] === table[i+k][j]) {
-                //khi o ria border +1 se lam gia tri cua table[i] vuot ra ngoai dan den bug
+                //khi o border i+1 se lam gia tri cua table[i] vuot ra ngoai dan den bug
                 k++;
                 count++;
             }
             if (count >= 4) {
                 for (k = 0; k <= count; k++) {
                     document.getElementById((i+k) + '.' +j).style.color = "yellow";
+                    checkLeftObl();
+                    checkRightObl();
                 }
                 return true;
             }
@@ -125,6 +130,7 @@ function checkRightObl() {
             if (count >= 4) {
                 for (k = 0; k <= count; k++) {
                     document.getElementById((i+k) + '.' +(j+k)).style.color = "yellow";
+                    checkLeftObl();
                 }
                 return true;
             }
