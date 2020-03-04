@@ -26,7 +26,6 @@ function Create2DArray(rows) {
     let arr = [];
     for (let i = 0; i < rows; i++) {
         arr[i] = [];
-        // if(i===rows-1)arr[i+1]="";
     }
     arr.push("");
     return arr;
